@@ -99,7 +99,34 @@ def step_7():
     """
         Show a chart of all collections price data
     """
-    f.show_line_chart(arr_assets=ALL_COLLECTIONS)
+    f.show_line_chart(amount=20)
+
+
+def step_8():
+    """ 
+        Compare the returns on Investment. For NFT Collections we assume that one would invested
+        on the close of the first (or after a give delay) traidingday.
+        For Tradingpairs we take the same date as the NFT Collection.
+    """
+
+    #f.calc_returns(collection="metamercs_by_metacreed", traidingpairs=["BTCUSDT", "SOLUSDT"], delay=0)
+    f.calc_returns(collection="metamercs_by_metacreed", traidingpairs=ALL_TRADINGPAIRS, delay=0)
+
+def step_9():
+    """
+        show a chart of the top 1000 collection returns
+
+        Worked for all the 1000 collection except:
+            citizens_by_solsteads, synergian, the_lurkers, senseilabs, le_dao, mj98, deadlyroulette, 
+            casinonft, cold_sun, winning, imnotwordy, anima_alternis, uyab, trippart, magicstar
+    """
+    # create data
+    #f.prep_compare_all_returns() # -> runs for more than 5min
+    # plot data$
+    f.plot_compare_all_returns()
+
+
+
 
 if __name__ == "__main__":
     print("Start programm ", datetime.now())
@@ -107,7 +134,7 @@ if __name__ == "__main__":
     # logging.info("Started logging,  Code running..........  %s", datetime.now())
 
 
-    step_0()
+    # step_0()
     # step_1()
     # step_2()
     # step_3()
@@ -115,6 +142,8 @@ if __name__ == "__main__":
     # step_5()
     # step_6()
     # step_7()
+    # step_8()
+    step_9()
 
 
     print("Finished programm ", datetime.now())
