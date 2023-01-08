@@ -31,12 +31,14 @@ with st.sidebar:
     # step_1
     collection = st.selectbox(label='Solana NFT Collection', options=arr_top_collection, help="Choose from the top 1000 Solana NFT Collections (orderd by Volume)")
     tradingpairs = st.multiselect(label='Traidingpairs', options=main.ALL_TRADINGPAIRS, default=["SOLUSDT"])
-    if st.button("Collect & Prepare fresh data"):
-        with st.spinner('Wait for it...'):
-            main.step_1(webvisu=True, input_collections=[collection])
-            main.step_2(webvisu=True, input_tradingpairs=tradingpairs)
-            main.step_3(webvisu=True, input_collections=[collection])
-        st.success('Done!')
+    #if st.button("Collect & Prepare fresh data"):
+    #    with st.spinner('Wait for it...'):
+    #        main.step_1(webvisu=True, input_collections=[collection])
+    #        main.step_2(webvisu=True, input_tradingpairs=tradingpairs)
+    #        main.step_3(webvisu=True, input_collections=[collection])
+    #st.success('Done!')
+    st.warning("Update Data doesn't work anymore because Binance changed their terms.")
+    st.info('The repositry can we run localy if you want to update the data.', icon="ℹ️")
  
 
 
